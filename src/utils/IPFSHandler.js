@@ -21,7 +21,7 @@ export class IPFSHandler {
             },
         });
         */
-        const ipfs = create({ host: 'ipfs.infura.io', port: 5001,protocol: 'https' });
+        const ipfs = create({ host: '110.238.83.101', port: 5001,protocol: 'http' });
         const hash = await ipfs.add(buffer);
         return hash;
     };
