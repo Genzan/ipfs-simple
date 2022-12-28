@@ -1,5 +1,5 @@
 import React from 'react';
-import IPFSHandler from '../utils/IPFSHandler';
+import IPFSHandler from '../utils/IPFSHandler.js';
 import '../styles/Main.css';
 
 export class Home extends React.Component {

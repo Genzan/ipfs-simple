@@ -1,4 +1,4 @@
-import ipfsClient from 'ipfs-http-client';
+import { create } from 'ipfs-http-client';
 
 export class IPFSHandler {
 
@@ -10,9 +10,20 @@ export class IPFSHandler {
     };
 
     static saveFile = async(buffer) => {
-        //const ipfs = new ipfsClient({ host: 'ipfs.infura.io', port: 5001,protocol: 'https' });
-        //const hash = await ipfs.add(buffer);
-        return "hash";
+        //const auth = 'Basic ' + Buffer.from(INFURA_ID + ':' + INFURA_SECRET_KEY).toString('base64');
+        /*
+        const client = ipfsClient.create({
+            host: 'ipfs.infura.io',
+            port: 5001,
+            protocol: 'https',
+            headers: {
+                authorization: auth,
+            },
+        });
+        */
+        const ipfs = create({ host: 'ipfs.infura.io', port: 5001,protocol: 'https' });
+        const hash = await ipfs.add(buffer);
+        return hash;
     };
 
     static viewIPFSFile(hash) {
